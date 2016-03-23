@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Document Similarity Detection{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12">
+    <h2>Document Similarity detection based on bloom filter</h2>
+
+      <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Document1</label>
+    <textarea class="form-control" id="doc1" ></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Document2</label>
+    <textarea class="form-control" id="doc2" ></textarea>
+  </div>
+
+  
+  <button type="submit" id="calculate" class="btn btn-primary">Calculate</button>
+</form>
+
+    </div>
+       
+  </div>
+
+{% if object == request.user %}
+<!-- Action buttons -->
+<div class="row">
+
+  <div class="col-sm-12 ">
+    <a class="btn btn-primary" href="{% url 'users:update' %}">My Info</a>
+    <a class="btn btn-primary" href="{% url 'account_email' %}">E-Mail</a>
+    <!-- Your Stuff: Custom user template urls -->
+  </div>
+
+</div>
+<!-- End Action buttons -->
+{% endif %}
+
+
+
+</div>
+
+
+<div class="modal fade" id="result_modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Result</h4>
+      </div>
+      <div class="modal-body">
+
+        <p>Similarity percentage : <b><span id="percent_value"></span></b></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{% endblock content %}
+
+
+{% block javascript %}
+{{block.super}}
+<script src="{% static 'js/document_similarity.js' %}"></script>
+
+{% endblock javascript%}
