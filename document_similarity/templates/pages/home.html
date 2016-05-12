@@ -8,20 +8,42 @@
 
   <div class="row">
     <div class="col-sm-12">
-    <h2>Document Similarity detection based on bloom filter</h2>
 
       <form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Document1</label>
-    <textarea class="form-control" id="doc1" ></textarea>
+    <label for="exampleInputEmail1">Select Document1</label>
+    <!-- <input class="form-control" id="file1" type="file"> -->
+    <textarea class="form-control" id="file1" ></textarea>
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Document2</label>
-    <textarea class="form-control" id="doc2" ></textarea>
+    <label for="exampleInputEmail1">Select Document2</label>
+    <!-- <input class="form-control" id="file2" type="file"> -->
+    <textarea class="form-control" id="file2" ></textarea>
   </div>
 
+<hr>
+<div class="form-group">
+    <label for="exampleInputEmail1">Shingle Size</label>
+    <input class="form-control" id="shingle_size" type="integer" value ="5">
+    <!-- <textarea class="form-control" id="doc2" ></textarea> -->
+  </div>
   
-  <button type="submit" id="calculate" class="btn btn-primary">Calculate</button>
+  <center><button type="submit" id="calculate" class="btn btn-primary">Jaccard Similarity</button></center>
+  <hr>
+<div style="border:2px; border-color:green; border-style:solid; padding:10px;">
+  <div class="form-group">
+    <label for="exampleInputEmail1">With Stopwords</label>
+    <input class="form-control" id="s_with" type="float" value ="">
+    <!-- <textarea class="form-control" id="doc2" ></textarea> -->
+  </div>
+
+   <div class="form-group">
+    <label for="exampleInputEmail1">Without Stopwords</label>
+    <input class="form-control" id="s_without" type="float" value ="">
+    <!-- <textarea class="form-control" id="doc2" ></textarea> -->
+  </div>
+  </div>
+
 </form>
 
     </div>

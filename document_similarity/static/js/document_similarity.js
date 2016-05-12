@@ -29,12 +29,15 @@ $.ajaxSetup({
 });
 
 $("#calculate").click(function(e){
-	var doc1 = $("#doc1").val();
-	var doc2 = $("#doc2").val();
-	$.post("/calculate-similarity/",{doc1:doc1,doc2:doc2},function(data){
+	var file1 = $("#file1").val();
+	var file2 = $("#file2").val();
+    var shingle_size = $("#shingle_size").val();
+	$.post("/calculate-similarity/",{file1:file1,file2:file2,shingle_size:shingle_size},function(data){
 		data = JSON.parse(data);
-		$("#percent_value").html(data.similarity+"%");
-		$("#result_modal").modal('show');
+		// $("#percent_value").html(data.similarity+"%");
+		// $("#result_modal").modal('show');
+        $("#s_with").val(data.s_with);
+        $("#s_without").val(data.s_without);
 
 	});
 });
