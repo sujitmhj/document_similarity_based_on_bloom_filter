@@ -36,8 +36,9 @@ $("#calculate").click(function(e){
 		data = JSON.parse(data);
 		// $("#percent_value").html(data.similarity+"%");
 		// $("#result_modal").modal('show');
-        $("#s_with").val(data.s_with);
-        $("#s_without").val(data.s_without);
+        $("#s_with").val(Math.round(data.s_with*1000)/1000);
+        $("#s_without").val(Math.round(data.s_without*1000)/1000);
+        // Math.round(data.s_with*1000)/1000
 
 	});
 });
