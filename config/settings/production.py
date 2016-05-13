@@ -65,9 +65,9 @@ INSTALLED_APPS += ("gunicorn", )
 # Uploaded Media Files
 # ------------------------
 # See: http://django-storages.readthedocs.org/en/latest/index.html
-INSTALLED_APPS += (
-    'storages',
-)
+# INSTALLED_APPS += (
+#     'storages',
+# )
 
 # AWS_ACCESS_KEY_ID = env('DJANGO_AWS_ACCESS_KEY_ID')
 # AWS_SECRET_ACCESS_KEY = env('DJANGO_AWS_SECRET_ACCESS_KEY')
@@ -100,7 +100,7 @@ INSTALLED_APPS += (
 
 # # Static Assets
 # # ------------------------
-
+STATIC_URL = '/static/'
 # STATIC_URL = 'https://s3.amazonaws.com/%s/static/' % AWS_STORAGE_BUCKET_NAME
 # STATICFILES_STORAGE = 'config.settings.production.StaticRootS3BotoStorage'
 

@@ -29,9 +29,18 @@ $.ajaxSetup({
 });
 
 $("#calculate").click(function(e){
+
 	var file1 = $("#file1").val();
 	var file2 = $("#file2").val();
+
     var shingle_size = $("#shingle_size").val();
+    var shingle_length = parseInt(shingle_size);
+    if(file1.split(" ").length <shingle_length || file2.split(" ").length < shingle_length )
+    {
+        alert("Document size should be greater than shingle size");
+        return;
+    }
+
 	$.post("/calculate-similarity/",{file1:file1,file2:file2,shingle_size:shingle_size},function(data){
 		data = JSON.parse(data);
 		// $("#percent_value").html(data.similarity+"%");
