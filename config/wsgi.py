@@ -25,7 +25,10 @@ from django.core.wsgi import get_wsgi_application
 # mod_wsgi daemon mode with each site in its own daemon process, or use
 # os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings.production"
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.production")
-
+os.environ['DJANGO_SETTINGS_MODULE'] = 'config.settings.production'
+os.environ['DJANGO_SECRET_KEY'] = 'dg_*bcao4v-yq6f90-f2hn+ysl9&)y=0d_b=g3qgu2ij)9x5hh>'
+os.environ['DATABASE_URL'] = 'sqlite:///data.db'
+os.environ['DJANGO_ADMIN_URL'] = 'admin'
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.
