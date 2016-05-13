@@ -43,7 +43,7 @@ def get_similarity_value(tokens_A,tokens_B,single_length):
 
 
 
-    print shingle_A
+    # print(shingle_A)
 
     b1 = get_filter(shingle_A)
     b2 = get_filter(shingle_B)
@@ -57,9 +57,9 @@ def get_similarity_value(tokens_A,tokens_B,single_length):
 
 
     a_union_b = (len(shingle_A) + len(shingle_B) - common_count)
-    print "single_size:", single_length
-    print "union:",a_union_b
-    print "common:", common_count
+    print("single_size:", single_length)
+    print("union:",a_union_b)
+    print("common:", common_count)
 
     similarity = (common_count*1.0)/a_union_b
     return similarity
