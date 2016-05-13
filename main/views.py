@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.views.generic import View
-from pybloom import BloomFilter
+from pybloom.pybloom import BloomFilter
 import uuid
 from django import forms
 import json
